@@ -48,8 +48,30 @@ A predefined prompt that fetches current weather for four favorite Polish cities
 When invoked, this prompt instructs the MCP client to:
 1. Call `get_weather` for each of the four cities
 2. Present the results in a formatted table showing temperature, humidity, wind speed, and precipitation
+3. Read the baseline resource (`baseline://favorite-cities-weather/2026-09-22`)
+4. Compare current readings against the baseline to show:
+   - Temperature change (warmer/colder by how many degrees)
+   - Humidity change (higher/lower by how many percent)
+   - Wind speed change
+   - Precipitation change
+5. Provide a summary of weather trends for each city
 
-This is useful for quickly comparing weather across different regions of Poland (industrial south, mountain region, and Baltic coast).
+This is useful for quickly comparing weather across different regions of Poland and understanding how conditions have changed since the baseline date.
+
+## Resources
+
+### `baseline://favorite-cities-weather/2026-09-22`
+
+An MCP resource containing the frozen baseline weather data for the four favorite cities 
+measured on 2026-09-22 at 16:00:
+
+- **Katowice**: 12.8°C, 84.6% humidity, 2 m/s wind, 8.2 mm precipitation
+- **Zakopane**: 6.6°C, 92.0% humidity, 1 m/s wind, 17.8 mm precipitation
+- **Kołobrzeg**: 15.2°C, 68.4% humidity, 6 m/s wind, 0 mm precipitation
+- **Ustka**: 14.2°C, 81.9% humidity, 6 m/s wind, 0.01 mm precipitation
+
+This baseline is permanently stored and can be compared against future weather readings to 
+provide insights about how conditions have changed.
 
 ## VS Code configuration
 
